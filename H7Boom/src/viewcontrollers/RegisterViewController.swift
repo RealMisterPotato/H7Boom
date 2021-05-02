@@ -49,6 +49,8 @@ class RegisterViewController : UIViewController, UITextFieldDelegate{
                 }
                 else{
                     DatabaseHandler.createUser(nickname: nicknameTextField.text!, password: passwordTextField.text!)
+                    Helper.tryLogin(nickname: nicknameTextField.text!, password: passwordTextField.text!)
+                    self.dismiss(animated: true, completion: {self.presentingViewController?.dismiss(animated: false, completion: nil)})
                 }
             } else{
                 let alert = UIAlertController(title: "Server not responding", message: "too much time for response.", preferredStyle: UIAlertController.Style.alert)

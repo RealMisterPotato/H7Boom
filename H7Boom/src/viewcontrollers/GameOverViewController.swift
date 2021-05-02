@@ -37,6 +37,7 @@ class GameOverViewController : UIViewController{
         super.viewDidLoad()
         p = self.presentingViewController as? GameViewController
         scoreLabel.text = String(ScoreHandler.publicScore)
+        highScoreLabel.alpha = 0
         if (Helper.loggedInAs() != nil){
             var userhighscore = DatabaseHandler.getUserHighScore(Helper.loggedInAs()!)
             if (userhighscore != nil){
@@ -47,6 +48,7 @@ class GameOverViewController : UIViewController{
                     print("new highscore set: \(userhighscore) < \(ScoreHandler.publicScore)")
                     DatabaseHandler.updateHighScore(ScoreHandler.publicScore)
                     // show the "new highscore" label and animate it
+                    highScoreLabel.alpha = 1
                     highScoreAnimationTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { timer in
                         self.animateHighscoreLabel()
                         })
