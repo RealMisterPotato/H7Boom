@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="neK-ha-w9B">
+            <objects>
+                <viewController storyboardIdentifier="gameViewController" id="Qyj-9K-0ed" customClass="GameViewController" customModule="H7Boom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eCw-lv-sAO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="420" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whW-ua-im9" customClass="CounterLabel" customModule="H7Boom" customModuleProvider="target">
+                                <rect key="frame" x="50" y="138.5" width="156.5" height="105.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="88"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click here to start!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uI-9y-Yv6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                        </subviews>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="7uI-9y-Yv6" firstAttribute="leading" secondItem="kAO-5q-6uc" secondAttribute="leading" id="7B7-Ef-C9k"/>
+                            <constraint firstItem="whW-ua-im9" firstAttribute="top" secondItem="7uI-9y-Yv6" secondAttribute="bottom" constant="50" id="d9B-cG-Onq"/>
+                            <constraint firstItem="whW-ua-im9" firstAttribute="leading" secondItem="kAO-5q-6uc" secondAttribute="leading" constant="50" id="dLI-fO-MRj"/>
+                            <constraint firstItem="kAO-5q-6uc" firstAttribute="trailing" secondItem="7uI-9y-Yv6" secondAttribute="trailing" id="ecN-L4-cqc"/>
+                            <constraint firstItem="7uI-9y-Yv6" firstAttribute="top" secondItem="kAO-5q-6uc" secondAttribute="top" id="knY-At-Qph"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kAO-5q-6uc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NwR-Pt-NA6"/>
+                    <connections>
+                        <outlet property="counterLabel" destination="whW-ua-im9" id="jkW-4Q-Q3W"/>
+                        <outlet property="counterLabelLeft" destination="dLI-fO-MRj" id="AXo-Fi-uLH"/>
+                        <outlet property="counterLabelTop" destination="d9B-cG-Onq" id="OC0-ie-Und"/>
+                        <outlet property="timeLeftLabel" destination="7uI-9y-Yv6" id="YT2-6I-irY"/>
+                        <segue destination="6MW-aE-fXW" kind="show" identifier="endGameSegue" id="dbk-9l-046"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VtL-p5-9FB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="43" y="66"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="9xp-QK-Hwl">
+            <objects>
+                <viewController id="6MW-aE-fXW" customClass="GameOverViewController" customModule="H7Boom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Tg-Kh-cBJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1b-CE-S8h">
+                                <rect key="frame" x="96" y="128" width="222" height="58.5"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*SCORE*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBs-RZ-WPt">
+                                <rect key="frame" x="97" y="385.5" width="220.5" height="71.5"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="55"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8t-g4-ehD">
+                                <rect key="frame" x="154" y="250.5" width="106" height="52"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW HIGH SCORE!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mV-EL-xnZ">
+                                <rect key="frame" x="67.5" y="561" width="279.5" height="47"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpG-Ag-Ra1">
+                                <rect key="frame" x="64" y="672" width="72" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="⮐">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="exitPressed:" destination="6MW-aE-fXW" eventType="touchUpInside" id="gQl-eB-ImC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgb-dg-0pN">
+                                <rect key="frame" x="309" y="672" width="73" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="⅁">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="retryPressed:" destination="6MW-aE-fXW" eventType="touchUpInside" id="DED-c3-Hp9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.54663212435233155" green="0.059212524395816653" blue="0.0" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="h1b-CE-S8h" firstAttribute="top" secondItem="ie0-is-YbL" secondAttribute="top" constant="128" id="5Ml-8r-hDN"/>
+                            <constraint firstItem="xBs-RZ-WPt" firstAttribute="centerY" secondItem="6Tg-Kh-cBJ" secondAttribute="centerY" id="6x9-OA-Y1m"/>
+                            <constraint firstItem="xBs-RZ-WPt" firstAttribute="centerX" secondItem="6Tg-Kh-cBJ" secondAttribute="centerX" id="Ixf-lp-wCT"/>
+                            <constraint firstItem="ie0-is-YbL" firstAttribute="trailing" secondItem="lgb-dg-0pN" secondAttribute="trailing" constant="96" id="KaQ-rD-f20"/>
+                            <constraint firstItem="U8t-g4-ehD" firstAttribute="centerX" secondItem="6Tg-Kh-cBJ" secondAttribute="centerX" id="Kto-AK-sAG"/>
+                            <constraint firstItem="lgb-dg-0pN" firstAttribute="leading" secondItem="lpG-Ag-Ra1" secondAttribute="trailing" constant="96" id="OGY-FQ-Hla"/>
+                            <constraint firstItem="lpG-Ag-Ra1" firstAttribute="top" secondItem="8mV-EL-xnZ" secondAttribute="bottom" constant="64" id="dKx-bI-JTD"/>
+                            <constraint firstItem="ie0-is-YbL" firstAttribute="bottom" secondItem="lpG-Ag-Ra1" secondAttribute="bottom" constant="64" id="gQM-wv-yR3"/>
+                            <constraint firstItem="lpG-Ag-Ra1" firstAttribute="leading" secondItem="ie0-is-YbL" secondAttribute="leading" constant="96" id="nkn-tJ-3uc"/>
+                            <constraint firstItem="h1b-CE-S8h" firstAttribute="centerX" secondItem="6Tg-Kh-cBJ" secondAttribute="centerX" id="t4V-Fk-iSX"/>
+                            <constraint firstItem="ie0-is-YbL" firstAttribute="bottom" secondItem="lgb-dg-0pN" secondAttribute="bottom" constant="64" id="uwX-1D-q9A"/>
+                            <constraint firstItem="U8t-g4-ehD" firstAttribute="top" secondItem="h1b-CE-S8h" secondAttribute="bottom" constant="64" id="v0C-as-Uqj"/>
+                            <constraint firstItem="8mV-EL-xnZ" firstAttribute="centerX" secondItem="6Tg-Kh-cBJ" secondAttribute="centerX" id="v1E-s6-1FL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ie0-is-YbL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NEw-fA-vYf"/>
+                    <connections>
+                        <outlet property="highScoreLabel" destination="8mV-EL-xnZ" id="gwS-WS-c5U"/>
+                        <outlet property="scoreLabel" destination="xBs-RZ-WPt" id="6ly-2R-oeq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYk-WH-Zmy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940.57971014492762" y="65.625"/>
+        </scene>
+    </scenes>
+</document>
